@@ -1,5 +1,7 @@
 # speakly-test
 
+instruction can be found in [car_crud_assignment.pdf](car_crud_assignment.pdf)
+
 ## Project setup
 ```
 npm install
