@@ -3,7 +3,7 @@
 exports[`Cars snapshot test 1`] = `
 <div class="mx-3">
   <div class="row">
-    <div class="col-4 text-left"><button class="btn btn-info">
+    <div class="col-4 text-left"><button id="add_new_car" class="btn btn-info">
         New Car
       </button></div>
     <div class="col-4">
@@ -30,72 +30,192 @@ exports[`Cars snapshot test 1`] = `
       <b-collapse id="collapse-1">
         <b-card>
           <div>
-            <div id="car_1">
-              <validationobserver></validationobserver>
+            <div id="car_1"><span><form class="text-left text-info"><!----> <div><div class="ml-2 d-flex justify-content-between"><div class="mt-auto">
+                    Car title:
+                </div> <div><a id="remove_car_1" class="btn btn-link text-info"><biconx class="icon"></biconx></a></div></div> <span><bforminput></bforminput> <bforminvalidfeedback></bforminvalidfeedback></span></div>
+            <div class="my-4">
+              <div class="ml-2">
+                Car description:
+              </div> <span><bformtextarea></bformtextarea> <bforminvalidfeedback></bforminvalidfeedback></span>
             </div>
-            <div class="separator border-info"></div>
-          </div>
-          <div>
-            <div id="car_2">
-              <validationobserver></validationobserver>
+            <div class="row my-md-4">
+              <div class="col-6 col-md-4">
+                Probability
+                <bformselect value-field="id" text-field="title" options="[object Object],[object Object],[object Object]"></bformselect>
+              </div>
+              <div class="col-6 col-md-4">
+                Impact
+                <bformselect value-field="id" text-field="title" options="[object Object],[object Object],[object Object]"></bformselect>
+              </div>
+              <div class="col-12 col-md-4 my-3 my-md-0">
+                TODO
+              </div>
             </div>
-            <div class="separator border-info"></div>
-          </div>
-          <div>
-            <div id="car_3">
-              <validationobserver></validationobserver>
+            <div class="mb-4">
+              <div class="ml-2">
+                Car response:
+              </div> <textarea type="text" class="form-control"></textarea>
             </div>
-            <div class="separator border-info"></div>
+            <div class="mb-3 text-right">
+              <!----> <button type="submit" class="btn btn-info">
+                Save
+              </button>
+            </div>
+            </form></span>
           </div>
-        </b-card>
-      </b-collapse>
+          <div class="separator border-info"></div>
     </div>
-  </div>
-  <div id="category_2">
     <div>
-      <b-card-header header-tag="header" role="tab" class="p-1">
-        <b-button block="" variant="info">
-          <div class="d-flex justify-content-between">
-            <div>
-              Category 2 (0)
-            </div>
-            <div>
-              <biconchevrondown></biconchevrondown>
-            </div>
-          </div>
-        </b-button>
-      </b-card-header>
-      <b-collapse id="collapse-2">
-        <b-card></b-card>
-      </b-collapse>
+      <div id="car_2"><span><form class="text-left text-info"><!----> <div><div class="ml-2 d-flex justify-content-between"><div class="mt-auto">
+                    Car title:
+                </div> <div><a id="remove_car_2" class="btn btn-link text-info"><biconx class="icon"></biconx></a></div></div> <span><bforminput></bforminput> <bforminvalidfeedback></bforminvalidfeedback></span></div>
+      <div class="my-4">
+        <div class="ml-2">
+          Car description:
+        </div> <span><bformtextarea></bformtextarea> <bforminvalidfeedback></bforminvalidfeedback></span>
+      </div>
+      <div class="row my-md-4">
+        <div class="col-6 col-md-4">
+          Probability
+          <bformselect value-field="id" text-field="title" options="[object Object],[object Object],[object Object]"></bformselect>
+        </div>
+        <div class="col-6 col-md-4">
+          Impact
+          <bformselect value-field="id" text-field="title" options="[object Object],[object Object],[object Object]"></bformselect>
+        </div>
+        <div class="col-12 col-md-4 my-3 my-md-0">
+          TODO
+        </div>
+      </div>
+      <div class="mb-4">
+        <div class="ml-2">
+          Car response:
+        </div> <textarea type="text" class="form-control"></textarea>
+      </div>
+      <div class="mb-3 text-right">
+        <!----> <button type="submit" class="btn btn-info">
+          Save
+        </button>
+      </div>
+      </form></span>
     </div>
+    <div class="separator border-info"></div>
   </div>
-  <div id="category_3">
-    <div>
-      <b-card-header header-tag="header" role="tab" class="p-1">
-        <b-button block="" variant="info">
-          <div class="d-flex justify-content-between">
-            <div>
-              Category 3 (1)
-            </div>
-            <div>
-              <biconchevrondown></biconchevrondown>
-            </div>
-          </div>
-        </b-button>
-      </b-card-header>
-      <b-collapse id="collapse-3">
-        <b-card>
+  <div>
+    <div id="car_3"><span><form class="text-left text-info"><!----> <div><div class="ml-2 d-flex justify-content-between"><div class="mt-auto">
+                    Car title:
+                </div> <div><a id="remove_car_3" class="btn btn-link text-info"><biconx class="icon"></biconx></a></div></div> <span><bforminput></bforminput> <bforminvalidfeedback></bforminvalidfeedback></span></div>
+    <div class="my-4">
+      <div class="ml-2">
+        Car description:
+      </div> <span><bformtextarea></bformtextarea> <bforminvalidfeedback></bforminvalidfeedback></span>
+    </div>
+    <div class="row my-md-4">
+      <div class="col-6 col-md-4">
+        Probability
+        <bformselect value-field="id" text-field="title" options="[object Object],[object Object],[object Object]"></bformselect>
+      </div>
+      <div class="col-6 col-md-4">
+        Impact
+        <bformselect value-field="id" text-field="title" options="[object Object],[object Object],[object Object]"></bformselect>
+      </div>
+      <div class="col-12 col-md-4 my-3 my-md-0">
+        TODO
+      </div>
+    </div>
+    <div class="mb-4">
+      <div class="ml-2">
+        Car response:
+      </div> <textarea type="text" class="form-control"></textarea>
+    </div>
+    <div class="mb-3 text-right">
+      <!----> <button type="submit" class="btn btn-info">
+        Save
+      </button>
+    </div>
+    </form></span>
+  </div>
+  <div class="separator border-info"></div>
+</div>
+</b-card>
+</b-collapse>
+</div>
+</div>
+<div id="category_2">
+  <div>
+    <b-card-header header-tag="header" role="tab" class="p-1">
+      <b-button block="" variant="info">
+        <div class="d-flex justify-content-between">
           <div>
-            <div id="car_4">
-              <validationobserver></validationobserver>
-            </div>
-            <div class="separator border-info"></div>
+            Category 2 (0)
           </div>
-        </b-card>
-      </b-collapse>
-    </div>
+          <div>
+            <biconchevrondown></biconchevrondown>
+          </div>
+        </div>
+      </b-button>
+    </b-card-header>
+    <b-collapse id="collapse-2">
+      <b-card></b-card>
+    </b-collapse>
   </div>
-  <!---->
+</div>
+<div id="category_3">
+  <div>
+    <b-card-header header-tag="header" role="tab" class="p-1">
+      <b-button block="" variant="info">
+        <div class="d-flex justify-content-between">
+          <div>
+            Category 3 (1)
+          </div>
+          <div>
+            <biconchevrondown></biconchevrondown>
+          </div>
+        </div>
+      </b-button>
+    </b-card-header>
+    <b-collapse id="collapse-3">
+      <b-card>
+        <div>
+          <div id="car_4"><span><form class="text-left text-info"><!----> <div><div class="ml-2 d-flex justify-content-between"><div class="mt-auto">
+                    Car title:
+                </div> <div><a id="remove_car_4" class="btn btn-link text-info"><biconx class="icon"></biconx></a></div></div> <span><bforminput></bforminput> <bforminvalidfeedback></bforminvalidfeedback></span></div>
+          <div class="my-4">
+            <div class="ml-2">
+              Car description:
+            </div> <span><bformtextarea></bformtextarea> <bforminvalidfeedback></bforminvalidfeedback></span>
+          </div>
+          <div class="row my-md-4">
+            <div class="col-6 col-md-4">
+              Probability
+              <bformselect value-field="id" text-field="title" options="[object Object],[object Object],[object Object]"></bformselect>
+            </div>
+            <div class="col-6 col-md-4">
+              Impact
+              <bformselect value-field="id" text-field="title" options="[object Object],[object Object],[object Object]"></bformselect>
+            </div>
+            <div class="col-12 col-md-4 my-3 my-md-0">
+              TODO
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="ml-2">
+              Car response:
+            </div> <textarea type="text" class="form-control"></textarea>
+          </div>
+          <div class="mb-3 text-right">
+            <!----> <button type="submit" class="btn btn-info">
+              Save
+            </button>
+          </div>
+          </form></span>
+        </div>
+        <div class="separator border-info"></div>
+  </div>
+  </b-card>
+  </b-collapse>
+</div>
+</div>
+<!---->
 </div>
 `;

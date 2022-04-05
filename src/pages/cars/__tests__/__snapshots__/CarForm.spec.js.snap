@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CarForm snapshot test 1`] = `
+<span><form class="text-left text-info"><div class="category-select my-3"><div class="ml-2">
+                Car category:
+            </div> <div><span><bformselect value-field="id" text-field="title" options="[object Object],[object Object],[object Object]"></bformselect> <bforminvalidfeedback></bforminvalidfeedback></span></div>
+</div>
+<div>
+  <div class="ml-2 d-flex justify-content-between">
+    <div class="mt-auto">
+      Car title:
+    </div>
+    <div>
+      <!---->
+    </div>
+  </div> <span><bforminput></bforminput> <bforminvalidfeedback></bforminvalidfeedback></span>
+</div>
+<div class="my-4">
+  <div class="ml-2">
+    Car description:
+  </div> <span><bformtextarea></bformtextarea> <bforminvalidfeedback></bforminvalidfeedback></span>
+</div>
+<div class="row my-md-4">
+  <div class="col-6 col-md-4">
+    Probability
+    <bformselect value-field="id" text-field="title" options="[object Object],[object Object],[object Object]"></bformselect>
+  </div>
+  <div class="col-6 col-md-4">
+    Impact
+    <bformselect value-field="id" text-field="title" options="[object Object],[object Object],[object Object]"></bformselect>
+  </div>
+  <div class="col-12 col-md-4 my-3 my-md-0">
+    TODO
+  </div>
+</div>
+<div class="mb-4">
+  <div class="ml-2">
+    Car response:
+  </div> <textarea type="text" class="form-control"></textarea>
+</div>
+<div class="mb-3 text-right"><button class="btn btn-outline-info mr-3">
+    Cancel
+  </button> <button type="submit" class="btn btn-info">
+    Save
+  </button></div>
+</form>
+</span>
+`;

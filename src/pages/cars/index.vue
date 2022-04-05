@@ -2,7 +2,7 @@
     <Main>
         <div class="row">
             <div class="col-4 text-left">
-                <button class="btn btn-info" @click="openAddCarModal">
+                <button id="add_new_car" class="btn btn-info" @click="openAddCarModal">
                     New Car
                 </button>
             </div>

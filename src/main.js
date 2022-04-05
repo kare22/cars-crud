@@ -34,8 +34,6 @@ Object.keys(rules).forEach(rule => {
 });
 
 Vue.use(VueRouter);
-Vue.component('ValidationObserver', ValidationObserver);
-Vue.component('ValidationProvider', ValidationProvider);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueConfirmDialog);

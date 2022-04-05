@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import Cars from '@/pages/cars/index.vue';
 
-import testData from './test-data';
+import testData from './__mocks__/test-data';
 
 jest.mock('@/store');
 
@@ -70,6 +70,19 @@ describe('Cars', () => {
                 expect(wrapper.find(`#category_${category.id}`).find(`#car_${car.id}`).exists()).toBeTruthy();
             });
         });
+    });
+
+    it('should open new car modal when "New Car" is pressed', async() => {
+        const methods = {
+            openAddCarModal: jest.fn(),
+        };
+        const wrapper = await getComponent({ methods });
+
+        wrapper.find('#add_new_car').trigger('click');
+
+        await wrapper.vm.$nextTick();
+
+        expect(methods.openAddCarModal).toHaveBeenCalled();
     });
 });
 
