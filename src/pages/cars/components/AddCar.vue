@@ -1,6 +1,7 @@
 <template>
     <CarForm
         @cancel="$emit('close')"
+        @save="$emit('close')"
     />
 </template>
 

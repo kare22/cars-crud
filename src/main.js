@@ -10,6 +10,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import store from '@/store';
 import axios from 'axios';
+import {
+    ValidationObserver,
+    ValidationProvider,
+    extend,
+} from 'vee-validate';
+import * as rules from 'vee-validate/dist/rules';
 
 import './styles/index.css';
 
@@ -22,7 +28,14 @@ Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false;
 
+// Install VeeValidate rules and localization
+Object.keys(rules).forEach(rule => {
+    extend(rule, rules[rule]);
+});
+
 Vue.use(VueRouter);
+Vue.component('ValidationObserver', ValidationObserver);
+Vue.component('ValidationProvider', ValidationProvider);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueConfirmDialog);

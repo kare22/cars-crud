@@ -1,18 +1,26 @@
 <template>
-    <div class="text-left text-info">
+    <ValidationObserver ref="observer" v-slot="{ handleSubmit }">
+        <BForm class="text-left text-info" @submit.stop.prevent="save">
         <div>
-            <div class="my-3">
+            <div class="my-3" v-if="isNew">
                 <div class="ml-2">
                     Car category:
                 </div>
                 <div>
-                    <BFormSelect
-                        v-if="isNew"
-                        v-model="carData.category"
-                        value-field="id"
-                        text-field="title"
-                        :options="categories"
-                    />
+                    <ValidationProvider name="Category" :rules="{ required: true}" v-slot="validationContext">
+                        <BFormSelect
+                            v-model="carData.category"
+                            value-field="id"
+                            text-field="title"
+                            :options="categories"
+                            :state="getValidationState(validationContext)"
+                        >
+                            <template #first>
+                                <b-form-select-option :value="null" disabled>-- Please select a category --</b-form-select-option>
+                            </template>
+                        </BFormSelect>
+                        <BFormInvalidFeedback>{{ validationContext.errors[0] }}</BFormInvalidFeedback>
+                    </ValidationProvider>
                 </div>
             </div>
             <div class="ml-2 d-flex justify-content-between">
@@ -29,21 +37,25 @@
                     </a>
                 </div>
             </div>
-            <input
-                v-model="carData.title"
-                type="text"
-                class="form-control"
-            >
+            <ValidationProvider name="Title" :rules="{ required: true, min: 4 }" v-slot="validationContext">
+                <BFormInput
+                    v-model="carData.title"
+                    :state="getValidationState(validationContext)"
+                ></BFormInput>
+                <BFormInvalidFeedback>{{ validationContext.errors[0] }}</BFormInvalidFeedback>
+            </ValidationProvider>
         </div>
         <div class="my-4">
             <div class="ml-2">
                 Car description:
             </div>
-            <textarea
-                v-model="carData.description"
-                type="text"
-                class="form-control"
-            />
+            <ValidationProvider name="Description" :rules="{ required: true}" v-slot="validationContext">
+                <BFormTextarea
+                    v-model="carData.description"
+                    :state="getValidationState(validationContext)"
+                ></BFormTextarea>
+                <BFormInvalidFeedback>{{ validationContext.errors[0] }}</BFormInvalidFeedback>
+            </ValidationProvider>
         </div>
         <div class="row my-md-4">
             <div class="col-6 col-md-4">
@@ -88,12 +100,13 @@
             </button>
             <button
                 class="btn btn-info"
-                @click="save"
+                type="submit"
             >
                 Save
             </button>
         </div>
-    </div>
+    </BForm>
+    </ValidationObserver>
 </template>
 
 <script>
@@ -138,7 +151,13 @@ export default {
         }
     },
     methods: {
+        getValidationState({ dirty, validated, valid = null }) {
+            return dirty || validated ? valid : null;
+        },
         async save() {
+            if (!(await this.$refs?.observer?.validate())) {
+                return;
+            }
             if (this.isNew) {
                 await this.$store.dispatch('cars/create', {car: this.carData});
             } else {

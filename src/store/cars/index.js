@@ -52,7 +52,7 @@ const actions = {
     },
     async update({ commit }, { car }) {
         try {
-            const { data } = await axios.put(`/car/${car.id}`, { ...car });
+            const { data } = await axios.put(`/cars/${car.id}`, { ...car });
             commit('update', data);
             vm.$toastr.s(`Car ${car.title} updated successfully!`);
             return data;

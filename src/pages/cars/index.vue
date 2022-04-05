@@ -51,7 +51,6 @@ export default {
     },
     methods: {
         openAddCarModal() {
-            console.log(this.$refs?.addCarModal);
             this.$refs?.addCarModal?.open();
         },
         closeCarModal() {

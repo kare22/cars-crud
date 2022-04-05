@@ -13,7 +13,7 @@ export default {
             type: Object,
             required: true,
             validator(value) {
-                return value.id && value.description && value.title && value.category && value.impact && value.probability;
+                return value.id && value.description && value.title && value.category;
             },
         },
     },
