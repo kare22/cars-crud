@@ -23,7 +23,8 @@ if (process.env.NODE_ENV === 'development') {
     makeServer();
 }
 
-axios.defaults.baseURL = process.env.VUE_APP_API_URL;
+axios.defaults.baseURL = process.env.VUE_APP_API_URL || '/api';
+
 Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false;
