@@ -6,10 +6,6 @@ export function makeServer({ environment = 'development' } = {}) {
     faker.seed(123);
     const maxClassifierId = 6;
     let noOfCars = 10;
-    const range = {
-        min: 1,
-        max: maxClassifierId,
-    };
 
     const probabilities = [
         {
@@ -68,9 +64,9 @@ export function makeServer({ environment = 'development' } = {}) {
                 title: () => faker.vehicle.vehicle(),
                 description: faker.lorem.paragraph(),
                 response: faker.lorem.paragraph(),
-                category: () => faker.datatype.number(range),
-                impact: () => faker.datatype.number(range),
-                probability: () => faker.datatype.number(range),
+                category: () => faker.datatype.number({ min: 1, max: maxClassifierId, }),
+                impact: () => faker.datatype.number({ min: 1, max: impacts.length, }),
+                probability: () => faker.datatype.number({ min: 1, max: probabilities.length, }),
             }),
             category: Factory.extend({
                 id: (i) => i+1,
@@ -95,24 +91,29 @@ export function makeServer({ environment = 'development' } = {}) {
             this.namespace = 'api';
 
             this.get('/cars', (schema) => {
-                return schema.cars.all();
+                return schema.cars.all().models;
             });
-
             this.post('/cars', (schema, request) => {
                 let car = JSON.parse(request.requestBody);
                 car.id = noOfCars++;
 
                 return car;
             });
+            this.put('/cars', (schema, request) => {
+                return JSON.parse(request.requestBody);
+            });
+            this.delete('/cars/:id', () => {
+                return true;
+            });
 
             this.get('/classifiers/categories', (schema) => {
-                return schema.categories.all();
+                return schema.categories.all().models;
             });
             this.get('/classifiers/probabilities', (schema) => {
-                return schema.probabilities.all();
+                return schema.probabilities.all().models;
             });
             this.get('/classifiers/impacts', (schema) => {
-                return schema.impacts.all();
+                return schema.impacts.all().models;
             });
         },
     });

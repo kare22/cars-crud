@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <vue-confirm-dialog />
         <RouterView />
     </div>
 </template>

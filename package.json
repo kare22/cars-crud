@@ -9,16 +9,19 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "bootstrap": "^4.5.1",
+    "bootstrap-vue": "^2.16.0",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
-    "vuex": "^3.5.1",
+    "vue-confirm-dialog": "1.0.2",
     "vue-router": "^3.5.3",
-    "bootstrap": "^4.5.1",
-    "bootstrap-vue": "^2.16.0"
+    "vue-toastr": "^2.1.2",
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
     "@faker-js/faker": "^6.1.2",
+    "@types/uuid": "^8.3.4",
     "@vue/cli-plugin-babel": "^3.12.0",
     "@vue/cli-plugin-eslint": "^3.12.0",
     "@vue/cli-service": "^3.12.0",

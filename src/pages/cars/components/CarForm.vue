@@ -1,13 +1,13 @@
 <template>
-    <div class="mx-3">
-        <slot />
+    <div>
+        todo
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Main',
-}; 
+    name: 'CarForm'
+};
 </script>
 
 <style scoped>
