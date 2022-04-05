@@ -1,5 +1,7 @@
 <template>
-    <CarForm :car="car" />
+    <div :id="`car_${car.id}`">
+        <CarForm :car="car" />
+    </div>
 </template>
 
 <script>

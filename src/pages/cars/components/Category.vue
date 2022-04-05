@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :id="`category_${id}`">
         <div>
             <b-card-header
                 header-tag="header"
