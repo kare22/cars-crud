@@ -99,7 +99,7 @@ export function makeServer({ environment = 'development' } = {}) {
 
                 return car;
             });
-            this.put('/cars', (schema, request) => {
+            this.put('/cars/:id', (schema, request) => {
                 return JSON.parse(request.requestBody);
             });
             this.delete('/cars/:id', () => {

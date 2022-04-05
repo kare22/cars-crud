@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { vm } from '@/main';
 
 function state() {
     return {
@@ -40,8 +41,9 @@ const actions = {
     },
     async create({ commit }, { car }) {
         try {
-            const { data } = await axios.post('/cars', { car });
+            const { data } = await axios.post('/cars', { ...car });
             commit('add', data);
+            vm.$toastr.s(`Car ${car.title} added successfully!`);
             return data;
         } catch (e) {
             console.error(e);
@@ -50,8 +52,9 @@ const actions = {
     },
     async update({ commit }, { car }) {
         try {
-            const { data } = await axios.put(`/car/${car.id}`, { car });
+            const { data } = await axios.put(`/car/${car.id}`, { ...car });
             commit('update', data);
+            vm.$toastr.s(`Car ${car.title} updated successfully!`);
             return data;
         } catch (e) {
             console.error(e);

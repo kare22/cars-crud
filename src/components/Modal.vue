@@ -1,7 +1,7 @@
 <template>
     <BModal
         v-if="isOpen"
-        :ref="`modal_${id}`"
+        :size="size"
         :visible="true"
         hide-header
         hide-footer
@@ -18,9 +18,15 @@ import { v1 as uuid } from 'uuid';
 
 export default {
     name: 'Modal',
+    props: {
+        size: {
+            type: String,
+            default: 'lg',
+        },
+    },
     data() {
         return {
-            isOpen: true,
+            isOpen: false,
             id: uuid(),
         };
     },

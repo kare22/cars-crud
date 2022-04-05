@@ -20,7 +20,7 @@
             :title="title"
         />
         <Modal ref="addCarModal">
-           asadf
+           <AddCar @close="closeCarModal"/>
         </Modal>
     </Main>
 </template>
@@ -30,10 +30,11 @@ import { mapGetters } from 'vuex';
 import Category from '@/pages/cars/components/Category';
 import Main from '@/layouts/Main';
 import Modal from '@/components/Modal';
+import AddCar from '@/pages/cars/components/AddCar';
 
 export default {
     name: 'Cars',
-    components: { Category, Main, Modal, },
+    components: { AddCar, Category, Main, Modal, },
     computed: {
         ...mapGetters({
             cars: 'cars/categorized',
@@ -52,6 +53,9 @@ export default {
         openAddCarModal() {
             console.log(this.$refs?.addCarModal);
             this.$refs?.addCarModal?.open();
+        },
+        closeCarModal() {
+            this.$refs?.addCarModal?.close();
         },
     },
 };
