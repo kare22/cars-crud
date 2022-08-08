@@ -1,4 +1,7 @@
+A test project for [Speakly](https://speakly.me)
+
 # speakly-test
+[Demo](https://speaklytest.netlify.app/)
 
 instruction can be found in [car_crud_assignment.pdf](car_crud_assignment.pdf)
 
